@@ -20,6 +20,13 @@ class PlominoExtender(object):
     layer = IPlominoFieldExtension
 
     fields = [
+	_ExtensionStringField(
+            "cell_class",
+            widget = StringWidget(
+                label=u"Class name",
+                description=u"BootStrap class name for this field",
+            ),
+        ),
         _ExtensionStringField(
             "tooltip_title",
             widget = StringWidget(
