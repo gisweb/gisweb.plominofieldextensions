@@ -6,6 +6,9 @@
     i18n_domain="gisweb.plominofieldextensions">
 
   <include package="archetypes.schemaextender" />
+
+  <include package="Products.CMFPlomino.tests.schemaextender" />
+
   <adapter factory=".extender.PlominoExtender"
            provides="archetypes.schemaextender.interfaces.ISchemaExtender" /> 
   
