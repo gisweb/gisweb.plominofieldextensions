@@ -1,5 +1,5 @@
-from Products.Archetypes.public import StringField, StringWidget
-from Products.Archetypes.public import TextField, TextAreaWidget
+from Products.Archetypes.public import StringField, TextField
+from Products.Archetypes.public import StringWidget, TextAreaWidget
 from archetypes.schemaextender.field import ExtensionField
 from Products.CMFPlomino.interfaces import IPlominoField
 from zope.component import adapts
@@ -12,6 +12,7 @@ from .interfaces import IPlominoFieldExtension
 class _ExtensionStringField(ExtensionField, StringField): pass
 
 class _ExtensionTextField(ExtensionField, TextField): pass
+
 
 class PlominoExtender(object):
     adapts(IPlominoField)
@@ -42,7 +43,29 @@ class PlominoExtender(object):
                 rows=10,
             ),
         ),
-
+        _ExtensionStringField(
+            name='hide_when',
+            widget=StringWidget(
+                label=u"Enable dynamic hide-when on change",
+                description=u"Enable hidewhen sections on value change",
+            ),
+        ),
+        _ExtensionTextField(
+            name='custom_attributes',
+            widget=TextAreaWidget(
+                label=u"Custom attributes",
+                description=u"Custom html5 attributes, example: data-brand=\"toyota\" data-model=\"prius\"",
+                rows=10,
+            ),
+        ),
+        _ExtensionTextField(
+            name='custom_js',
+            widget=TextAreaWidget(
+                label=u"Javascript code",
+                description=u"JQuery code to handle object",
+                rows=20,
+            ),
+        ),
     ]
     def __init__(self, context):
         self.context = context
