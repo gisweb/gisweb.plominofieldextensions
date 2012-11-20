@@ -58,14 +58,6 @@ class PlominoExtender(object):
                 rows=10,
             ),
         ),
-        _ExtensionTextField(
-            name='custom_js',
-            widget=TextAreaWidget(
-                label=u"Javascript code",
-                description=u"JQuery code to handle object",
-                rows=20,
-            ),
-        ),
     ]
     def __init__(self, context):
         self.context = context
