@@ -21,41 +21,20 @@ class PlominoExtender(object):
     layer = IPlominoFieldExtension
 
     fields = [
-	_ExtensionStringField(
-            "cell_class",
-            widget = StringWidget(
-                label=u"Class name",
-                description=u"BootStrap class name for this field",
-            ),
-        ),
-        _ExtensionStringField(
-            "tooltip_title",
-            widget = StringWidget(
-                label=u"Tooltip Title",
-                description=u"Title of tooltip for this field",
-            ),
-        ),
         _ExtensionTextField(
-            name='tooltip_description',
+            name='fieldDescription',
             widget=TextAreaWidget(
-                label=u"Tooltip description",
-                description=u"Will be displayed in the tooltip",
-                rows=10,
-            ),
-        ),
-        _ExtensionStringField(
-            name='hide_when',
-            widget=StringWidget(
-                label=u"Enable dynamic hide-when on change",
-                description=u"Enable hidewhen sections on value change",
+                label=u"Field description",
+                description=u"Detailed field description",
+                rows=5,
             ),
         ),
         _ExtensionTextField(
-            name='custom_attributes',
+            name='customAttributes',
             widget=TextAreaWidget(
                 label=u"Custom attributes",
                 description=u"Custom html5 attributes, example: data-brand=\"toyota\" data-model=\"prius\"",
-                rows=10,
+                rows=5,
             ),
         ),
     ]
